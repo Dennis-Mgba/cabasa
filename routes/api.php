@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/', 'CabasaController@home');
+
 // To output list all items in the database
 Route::get('cabasas', 'CabasaController@index');
 

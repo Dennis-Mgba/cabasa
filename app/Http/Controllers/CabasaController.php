@@ -8,6 +8,11 @@ use App\Http\Requests;
 
 class CabasaController extends Controller
 {
+    public function home()
+    {
+        return view('welcome');
+    }
+
     // the index method will return all the data in the database
     public function index()
     {
