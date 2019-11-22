@@ -10,7 +10,7 @@ class CabasaController extends Controller
 {
     public function home()
     {
-        return view('welcome');
+        return view('welcome'); // return the home view page
     }
 
     // the index method will return all the data in the database
