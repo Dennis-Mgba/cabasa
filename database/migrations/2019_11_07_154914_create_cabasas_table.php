@@ -13,6 +13,7 @@ class CreateCabasasTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('cabasas');
         Schema::create('cabasas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('hallName');
