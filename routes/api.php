@@ -35,7 +35,7 @@ Route::get('cabasa/{id}', 'CabasaController@show');
 Route::post('cabasa', 'CabasaController@store');
 
 // To update a data
-Route::put('cabasa/{id}', 'CabasaController@store');
+Route::put('cabasa/{id}', 'CabasaController@update');
 
 // To Delete a data
 Route::delete('cabasa/{id}', 'CabasaController@destroy');

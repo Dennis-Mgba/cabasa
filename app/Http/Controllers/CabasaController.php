@@ -31,12 +31,23 @@ class CabasaController extends Controller
     // The method below store/post/insert data into the data base and also edit/put function
     public function store(Request $request)
     {
-        $cabasa = $request->isMethod('put') ? Cabasa::findOrFail($request->cabasa_id) : new Cabasa;
-
+        $cabasa = new Cabasa;
         $cabasa->id = $request->input('cabasa_id');
         $cabasa->hallName = $request->input('hallName');
         $cabasa->capacity = $request->input('capacity');
         $cabasa->reason = $request->input('reason');
+        $cabasa->status = $request->input('status');
+
+        if ($cabasa->save()) {
+            return new CabasaResource($cabasa);
+        }
+    }
+
+
+    public function update(Request $request)
+    {
+        $cabasa = $request->isMethod('put') ? Cabasa::findOrFail($request->id) : new Cabasa;
+        $cabasa->id = $request->id;
         $cabasa->status = $request->input('status');
 
         if ($cabasa->save()) {
